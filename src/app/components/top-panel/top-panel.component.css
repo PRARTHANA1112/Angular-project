@@ -1,0 +1,10 @@
+app-top-panel{
+    width:100%;
+}
+.top-panel{
+    width: auto;
+}
+.top-panel .welcome-text{
+    padding: 1%;
+    text-align: center;
+}

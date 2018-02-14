@@ -1,0 +1,6 @@
+.left-panel{
+    padding: 0;
+}
+.left-panel li:hover{
+    background-color: aliceblue;
+}
