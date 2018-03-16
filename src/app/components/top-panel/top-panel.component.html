@@ -3,7 +3,8 @@
   <div class="col-sm-10">
   <ul class="nav nav-tabs">
     <li class="nav-item" *ngFor="let obj of topPanelObj">
-      <span class="nav-link"  [id]="obj.name" (click)="getRightPanel(obj)" [ngClass]="{active: isActive(obj)}">
+      <span class="nav-link"  [id]="obj.name" (click)="getRightPanel(obj)" 
+      [ngClass]="{active: isActive(obj)}">
         <label [id]="obj.name">{{obj.name}}</label></span>
     </li>
   </ul>  

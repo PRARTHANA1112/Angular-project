@@ -1,0 +1,5 @@
+<div>
+  <create-survey-component (surveyCreated) = addSurvey($event)></create-survey-component>
+  <single-survey-component *ngFor="let survey of surveyList" [survey]= "survey"></single-survey-component>
+  <button type="button" class="btn btn-info" (click)="submitSurveyData()">Submit</button>
+</div>

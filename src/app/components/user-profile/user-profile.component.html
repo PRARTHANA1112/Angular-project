@@ -1,0 +1,24 @@
+<div class="user-profile">
+    <app-search-records></app-search-records>
+<div *ngIf="userProfile">
+    <span><H4 class="heading">My Profile</H4> <p><a [routerLink]="['register']">Edit</a></p></span>
+<span class="detail-info">
+  <table class="table table-striped table-hover table-sm">
+    <tr><td><label>ID:</label></td><td>{{userProfile.id}}</td></tr>
+    <tr><td><label>NAME:</label></td><td>{{userProfile.name}}</td></tr>
+    <tr><td><label>CLASS:</label></td><td>{{userProfile.class}}</td></tr>
+  </table>
+  <span><H4 class="heading">Books Issued</H4></span>
+  <table class="table table-striped table-hover table-sm"><thead>
+      <tr><th>CODE</th> <th>TITLE</th> <th>AUTHOR</th></tr></thead>
+      <tbody>
+    <tr *ngFor="let book of userProfile.booksIssued">
+      <td>{{book.bookCode}}</td>
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+    </tr>
+  </tbody>
+  </table>
+</span>
+</div>
+</div>

@@ -1,13 +1,15 @@
 <div class="container">
-    <form>
-
+    <span><H4 class="heading">Register : </H4></span>
+    <form ngNoForm>
       <table>
-        <tr><td><label>Name:</label></td><td><input type="text"></td></tr>
-        <tr><td><label>Email:</label></td><td><input type="email"></td></tr>
-        <tr><td><label>Password:</label></td><td><input type="password"></td></tr>
-        <tr><td><label>Confirm Password:</label></td><td><input type="password"></td></tr>
-        <tr><td><label>Phone Number:</label></td><td><input type="number"></td></tr>
+        <tr><td><label>Name:</label></td><td><input type="text" [(ngModel)]="userProfileObj.name"></td></tr>
+        <tr><td><label>Email:</label></td><td><input type="email" [(ngModel)]="userProfileObj.email"></td></tr>
+        <tr><td><label>Address:</label></td><td><input type="text" [(ngModel)]="userProfileObj.address"></td></tr>
+        <tr><td><label>Designation:</label></td><td><input type="text" [(ngModel)]="userProfileObj.designation"></td></tr>
+        <tr><td><label>Work Profile:</label></td><td><input type="text" [(ngModel)]="userProfileObj.workProfile"></td></tr>
+        <tr><td><label>Phone Number:</label></td><td><input type="number" [(ngModel)]="userProfileObj.contact"></td></tr>    
       </table>
-
+      <button (click)="saveRecord()">Save</button>
     </form>
+    
 </div>

@@ -13,5 +13,4 @@ export class LoginService{
     getUsername(){
         return this.username;
     }
-
 }

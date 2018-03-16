@@ -3,6 +3,7 @@ app-top-panel{
 }
 .top-panel{
     width: auto;
+    margin:0;
 }
 .top-panel .welcome-text{
     padding: 1%;

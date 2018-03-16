@@ -1,0 +1,11 @@
+.user-profile span h4{
+    padding: 2% 0 3% 0;
+    text-align: center;
+}
+.user-profile span p{
+    text-align: right;
+    color: blue;
+    font-style: italic;
+    text-decoration-line: underline;
+    cursor: pointer;
+}

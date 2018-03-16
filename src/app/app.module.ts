@@ -13,7 +13,17 @@ import { AppRoutingModule } from './/app-routing.module';
 
 import { LoginService } from './services/Login.service';
 import { RightPanelComponent } from './components/right-panel/right-panel.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserProfileService } from './services/UserProfile.service';
+import { UserProfile } from './Beans/UserProfile';
+import { SearchRecordsComponent } from './components/search-records/search-records.component';
+import { SurveyComponentComponent, SingleSurveyComponent,CreateSurveyComponent } from './components/survey-component/survey-component.component';
 
+
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { SurveyService } from './services/SurveyService.service';
+import { HttpModule } from '@angular/http';
+import { Http } from '@angular/http/src/http';
 
 @NgModule({
   declarations: [
@@ -24,14 +34,21 @@ import { RightPanelComponent } from './components/right-panel/right-panel.compon
     LeftPanelComponent,
     TopPanelComponent,
     DataPanelComponent,
-    RightPanelComponent
+    RightPanelComponent,
+    UserProfileComponent,
+    SearchRecordsComponent,
+    SurveyComponentComponent,
+    FeedbackComponent,
+    SingleSurveyComponent,
+    CreateSurveyComponent,
   ],
     imports :[
       BrowserModule,
       FormsModule,
       AppRoutingModule,
+      HttpModule,
     ],
-    providers: [LoginService],
+    providers: [LoginService,UserProfileService,UserProfile,SurveyService],
     bootstrap: [AppComponent]
   
 })

@@ -8,22 +8,14 @@ import { Leftpanel } from '../../Beans/LeftPanel';
 })
 export class LeftPanelComponent implements OnInit {
   private leftPanelObj : Leftpanel[]=[{
-    name : 'My Staff',
+    name : 'Books Issued',
   },{
-    name : 'Records',
-  },{
-    name : 'Efficiency',
-  },{
-    name : 'Pie',
-  },{
-    name : 'Bar',
+    name : 'Books OverDue',
   }];
 
   constructor() { }
 
   ngOnInit() {
   }
-
-
-
+  
 }

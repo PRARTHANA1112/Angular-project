@@ -7,16 +7,12 @@ import { LoginService } from '../../services/Login.service'
   templateUrl: './master-page.component.html',
   styleUrls: ['./master-page.component.css'],
 })
-
 export class MasterPageComponent implements OnInit {
-  constructor(private router: ActivatedRoute,
-  private loginService : LoginService) { 
-    this.loginService.username = JSON.parse(this.router.snapshot.params['loginObject']).username;
-    this.loginService.password = JSON.parse(this.router.snapshot.params['loginObject']).password;
+  constructor(private activatedRouter: ActivatedRoute,
+    private loginService : LoginService) { 
+    this.loginService.username = JSON.parse(this.activatedRouter.snapshot.params['loginObject']).username;
+    this.loginService.password = JSON.parse(this.activatedRouter.snapshot.params['loginObject']).password;
   }
   ngOnInit() {
-    debugger;
-    
   }
-
 }
