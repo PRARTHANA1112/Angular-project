@@ -9,6 +9,7 @@ export class UserProfileService{
     currentSelection = this.currentProfile.asObservable();
     changeSelectedProfile(userProfile:UserProfile){
         this.currentProfile.next(userProfile);
-
     }
+
+    
 }

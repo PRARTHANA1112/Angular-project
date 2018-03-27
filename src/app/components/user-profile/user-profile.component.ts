@@ -15,7 +15,7 @@ export class UserProfileComponent implements OnInit {
     
   userProfile : UserProfile;
   ngOnInit() {
-    this.profile = this.activatedRouter.snapshot.params['profile'];
+    this.profile = this.activatedRouter.snapshot.params['userProfile'];
     console.log(this.profile);
     this.userProfileService.currentSelection.subscribe
     (userProfile=>this.userProfile = userProfile);

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Leftpanel } from '../../Beans/LeftPanel';
+import { LeftPanel } from '../../Beans/LeftPanel';
+import { LeftPanelService } from '../../services/LeftPanel.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-left-panel',
@@ -7,15 +9,16 @@ import { Leftpanel } from '../../Beans/LeftPanel';
   styleUrls: ['./left-panel.component.css']
 })
 export class LeftPanelComponent implements OnInit {
-  private leftPanelObj : Leftpanel[]=[{
-    name : 'Books Issued',
-  },{
-    name : 'Books OverDue',
-  }];
-
-  constructor() { }
+  private leftPanelObj : LeftPanel[];
+  
+  constructor(private leftPanelService:LeftPanelService,
+  private router:Router) { }
 
   ngOnInit() {
+      this.leftPanelService.getLeftPanelData().subscribe(
+      data => this.leftPanelObj =data);
   }
-  
+  fetchRightPanel(){
+    this.router.navigate(["/landing/userProfile"])
+  }
 }

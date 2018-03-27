@@ -26,12 +26,12 @@ export class RegistrationFormComponent implements OnInit {
       this.userProfileObj = JSON.parse(this.activatedRoute.snapshot.params['userProfileObj']);
     }
     else{
-      this.userProfileObj = {
-        id:null,
-        name:null,
-        booksIssued:null,
-        class:null,
-      };
+      // this.userProfileObj = {
+      //   id:null,
+      //   name:null,
+      //   booksIssued:null,
+      //   class:null,
+      // };
     }
   }
   saveRecord(){

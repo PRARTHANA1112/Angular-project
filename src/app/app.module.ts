@@ -24,6 +24,8 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 import { SurveyService } from './services/SurveyService.service';
 import { HttpModule } from '@angular/http';
 import { Http } from '@angular/http/src/http';
+import { LeftPanelService } from './services/LeftPanel.service';
+import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import { Http } from '@angular/http/src/http';
     FeedbackComponent,
     SingleSurveyComponent,
     CreateSurveyComponent,
+    SignUpFormComponent,
   ],
     imports :[
       BrowserModule,
@@ -48,7 +51,7 @@ import { Http } from '@angular/http/src/http';
       AppRoutingModule,
       HttpModule,
     ],
-    providers: [LoginService,UserProfileService,UserProfile,SurveyService],
+    providers: [LoginService,UserProfileService,UserProfile,SurveyService,LeftPanelService],
     bootstrap: [AppComponent]
   
 })

@@ -1,3 +1,6 @@
 .container-fluid .top-panel{
     display: block;
 }
+.container-fluid .lower-panel .left-panel{
+    padding:0;
+}

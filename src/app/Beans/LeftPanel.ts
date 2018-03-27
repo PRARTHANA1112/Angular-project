@@ -1,3 +1,5 @@
-export interface Leftpanel{
-    name:string;
+export interface LeftPanel{
+    tabId:number,
+    tabName:string,
+    tabParentId:number;
 }

@@ -4,6 +4,7 @@ app-top-panel{
 .top-panel{
     width: auto;
     margin:0;
+    border-bottom: 1px solid #dae0e5;
 }
 .top-panel .welcome-text{
     padding: 1%;

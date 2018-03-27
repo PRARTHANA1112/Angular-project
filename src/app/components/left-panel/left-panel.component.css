@@ -1,6 +1,12 @@
 .left-panel{
     padding: 0;
+    height:100%;
+    border-right: 1px solid #dae0e5;
 }
 .left-panel li:hover{
     background-color: aliceblue;
+}
+.left-panel li{
+    padding: 0.2em;
+    text-align: center;
 }

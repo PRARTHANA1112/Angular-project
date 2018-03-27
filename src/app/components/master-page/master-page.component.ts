@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoginService } from '../../services/Login.service'
+import { Login } from '../../Beans/login';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-master-page',
@@ -8,11 +10,17 @@ import { LoginService } from '../../services/Login.service'
   styleUrls: ['./master-page.component.css'],
 })
 export class MasterPageComponent implements OnInit {
-  constructor(private activatedRouter: ActivatedRoute,
-    private loginService : LoginService) { 
-    this.loginService.username = JSON.parse(this.activatedRouter.snapshot.params['loginObject']).username;
-    this.loginService.password = JSON.parse(this.activatedRouter.snapshot.params['loginObject']).password;
+  private error_message :string = null;
+  constructor(private loginService : LoginService,
+    private router:Router) { 
   }
+  private loginObj:Login;
   ngOnInit() {
+    this.loginService.currentSelection.subscribe(loginObj => this.loginObj = loginObj);
+    if(this.loginObj==null || this.loginObj == undefined){
+      this.error_message = "Wrong Url.Please Login Aagain";
+      this.router.navigateByUrl('/');
+    }
+      
   }
 }

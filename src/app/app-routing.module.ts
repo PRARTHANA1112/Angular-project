@@ -11,10 +11,10 @@ import { SurveyComponentComponent } from './components/survey-component/survey-c
 import { FeedbackComponent } from './components/feedback/feedback.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponentComponent },
+  { path: '', component: LoginComponentComponent},
   { path: 'landing', component: MasterPageComponent ,
   children: [
-    { path: 'profile', component: UserProfileComponent },
+    { path: 'userProfile', component: UserProfileComponent },
     { path: 'register', component: RegistrationFormComponent },
     { path: 'survey', component: SurveyComponentComponent },
     { path: 'feedback', component: FeedbackComponent },

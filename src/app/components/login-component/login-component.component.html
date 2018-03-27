@@ -1,5 +1,8 @@
 <div class="container">
-    <div class="pop-up"><span class="login-header"><h3>Login</h3></span>
+    
+    <div class="pop-up">
+            <h6 class="error-message" [hidden]="!message">{{message}}</h6>
+        <span class="login-header"><h3>Login</h3></span>
       <table class="login-table"><tr>
           <td><label>Username</label></td>
           <td><input [(ngModel)]="loginObj.username" type="text" required ><br/></td></tr><tr>
@@ -8,6 +11,80 @@
     </table>
     <span class="login-footer">
         <input type="button" class="btn btn-info" value="{{buttonTitle}}" 
-        (click)="submitForm()"></span>
+        (click)="submitForm()"><br/><br/>
+        <p data-toggle="modal" data-target="#exampleModal">Register Now</p>
+    </span>
+
+
+    <!-- POP UP STARTS -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form #signUpForm="ngForm">
+                <table>
+                  <tr><td><label>Name:</label></td>
+                      <td><input type="text" [(ngModel)]="userProfileObj.name" name="name" 
+                        minlength="4" appForbiddenName="ABCD" #name="ngModel"></td></tr>
+                  <tr><td><label>Company Name:</label></td>
+                      <td><input type="text" [(ngModel)]="userProfileObj.companyName" 
+                        name="companyName"></td></tr>
+
+                  <tr><td><label>Phone Number:</label></td>
+                      <td><input type="number" [(ngModel)]="userProfileObj.phoneNumber" 
+                        name="phoneNumber" required minlength="10" maxlength="10" 
+                        #phoneNumber="ngModel"></td></tr>
+
+                  <tr><td><label>Email:</label></td>
+                      <td><input type="email" [(ngModel)]="userProfileObj.email" 
+                        name="email" required></td></tr>
+
+                   <tr><td><label>Role:</label></td>
+                        <td><select [(ngModel)]="userProfileObj.role" 
+                            (change)="onChangeCategorySelect($event)" name="role">
+                            <option value="default">Select Option</option>
+                            <option>Super Admin</option>
+                            <option>Admin</option>
+                            <option>Customer</option>
+                            <option>Supplier</option>
+                        </select></td></tr>
+                  <tr><td><label>Password:</label></td>
+                      <td><input type="password" required [(ngModel)]="userProfileObj.password" name="password"></td></tr>
+                  <tr><td><label>Confirm Password:</label></td>
+                      <td><input type="password" required name="confirmPassword"></td></tr>    
+                </table>
+
+                   <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                          class="alert  alert-danger">
+                        <div *ngIf="name.errors.required">Name is required.</div>
+                        <div *ngIf="name.errors.minlength">Name must be at least 4 characters long.</div>
+                        <div *ngIf="name.errors.forbiddenName">Name cannot be ABCD.</div>
+                    </div>
+
+                    <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)"
+                          class="alert alert-danger">
+                        <div *ngIf="phoneNumber.errors.required">Phone Number is required.</div>
+                        <div *ngIf="phoneNumber.errors.minlength||phoneNumber.errors.maxlength">Phone Number must be 10 characters long.</div>
+                    </div>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" 
+                  data-dismiss="modal">Discard</button>
+              <button type="button" class="btn btn-primary" 
+                [disabled]="!signUpForm.form.valid">Sign Up</button>
+            </div>
+          </div> 
+        </div>
+      </div>
+      <!-- POP UP ENDS -->
+
     </div>
 </div>

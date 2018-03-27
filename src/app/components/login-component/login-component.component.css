@@ -22,3 +22,12 @@
 .container .pop-up  .login-footer{
     margin-top:10%;
 }
+.container .pop-up  .login-footer p{
+    font-size: 12px;
+    text-decoration: underline;
+    color: #0000ff96;
+}
+.container .pop-up .error-message{
+    color: red;
+    font-weight: 600;
+}

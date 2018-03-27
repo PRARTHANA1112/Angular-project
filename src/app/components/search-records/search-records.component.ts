@@ -20,16 +20,16 @@ export class SearchRecordsComponent implements OnInit {
   searchRecords(){    
     this.profile = this.activatedRouter.snapshot.params['profile'];
     console.log(this.profile);
-    this.userProfile = {
-        name:'John',
-        id:1001,
-        class:'10',
-        booksIssued:[{bookCode:10,title:'let us c',author:'Mark zusak'},
-        {bookCode:23,title:'let us c++',author:'Mark zusak2'},
-        {bookCode:23,title:'let us c++',author:'Mark zusak2'},
-        {bookCode:23,title:'let us c++',author:'Mark zusak2'},
-        {bookCode:23,title:'let us c++',author:'Mark zusak2'},],
-    };
+    // this.userProfile = {
+    //     name:'John',
+    //     id:1001,
+    //     class:'10',
+    //     booksIssued:[{bookCode:10,title:'let us c',author:'Mark zusak'},
+    //     {bookCode:23,title:'let us c++',author:'Mark zusak2'},
+    //     {bookCode:23,title:'let us c++',author:'Mark zusak2'},
+    //     {bookCode:23,title:'let us c++',author:'Mark zusak2'},
+    //     {bookCode:23,title:'let us c++',author:'Mark zusak2'},],
+    // };
     this.userProfileService.changeSelectedProfile(this.userProfile);
   }
 }
